@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.sql.ResultSet;
 
-public class PedidoDAO {
+public class PedidoDAO implements InterfacePedidoDAO {
 
     Connection con;
 
@@ -30,6 +30,7 @@ public class PedidoDAO {
         }
     }
 
+    @Override
     public void criarPedido(Pedido p){
 
         try{
@@ -68,6 +69,7 @@ public class PedidoDAO {
 
     }
 
+    @Override
     public void addProduto(Pedido p){
         try{
             // Padrão de inserção na tabela Produto
@@ -93,6 +95,7 @@ public class PedidoDAO {
         }
     }
 
+    @Override
     public void atualizarPedido(Pedido p){
 
         try{
@@ -143,6 +146,7 @@ public class PedidoDAO {
         }
     }
 
+    @Override
     public List<Pedido> pesquisarTodos(){
 
         List<Pedido> lista = new ArrayList<>();
@@ -204,6 +208,7 @@ public class PedidoDAO {
         return lista;
     }
 
+    @Override
     public void excluir(Pedido p){
 
         try{
@@ -222,6 +227,7 @@ public class PedidoDAO {
 
     }
 
+    @Override
     public float fecharPedido(int numPedido){
 
         float valor = 0;
